@@ -1,0 +1,7 @@
+# Directories in root
+eln-cache/
+auto-save-list/
+elpa/
+
+# Files in root
+recentf

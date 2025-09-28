@@ -1,0 +1,30 @@
+;;; -*- lexical-binding: t -*-
+
+;; Package manager
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; Load custom modules
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'options)
+(require 'utils)
+(require 'navigation)
+(require 'init-org)
+(require 'keybinds)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes '(leuven-dark))
+ '(package-selected-packages '(evil org-modern org-superstar)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
